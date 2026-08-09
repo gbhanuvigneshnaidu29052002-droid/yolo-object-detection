@@ -6,7 +6,7 @@ from pathlib import Path
 # ----------------------
 # CONFIG
 # ----------------------
-ROOT = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8")
+ROOT = Path(r"..\..\My First Project.yolov8")
 TRAIN_DIR = ROOT / "train"
 IMAGES_DIR = TRAIN_DIR / "images"
 LABELS_DIR = TRAIN_DIR / "labels"

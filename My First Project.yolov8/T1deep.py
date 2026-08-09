@@ -80,7 +80,7 @@ class YOLOPipelineWithTracking:
     
     def get_dataset_path(self):
         """Get dataset configuration"""
-        default = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\data.yaml"
+        default = r"..\..\My First Project.yolov8\data.yaml"
         print(f"\n📂 DATASET CONFIGURATION")
         print(f"   Default: {default}")
         
@@ -221,7 +221,7 @@ class YOLOPipelineWithTracking:
                     return str(recent_weights)
         
         # SECOND: Look for default trained model location
-        default_model = r"C:\Users\gbhan\Desktop\YOLO DETCTION\cone_runs\cone_detector\weights\best.pt"
+        default_model = r"..\..\cone_runs\cone_detector\weights\best.pt"
         if Path(default_model).exists():
             print(f"\n📂 DEFAULT MODEL LOCATION:")
             print(f"   {default_model}")
@@ -272,7 +272,7 @@ class YOLOPipelineWithTracking:
         print(f"   {'F1 Score':<15} {metrics['f1']:.4f}")
         
         # Find and copy YOLO output files
-        runs_dir = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\runs\detect")
+        runs_dir = Path(r"..\..\My First Project.yolov8\runs\detect")
         if runs_dir.exists():
             for folder in runs_dir.iterdir():
                 if folder.is_dir() and split_name in folder.name.lower():

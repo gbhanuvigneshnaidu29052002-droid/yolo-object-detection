@@ -73,7 +73,7 @@ class YOLOPipeline:
     
     def get_data_config(self):
         """Get data.yaml path from user."""
-        default_path = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\data.yaml"
+        default_path = r"..\..\My First Project.yolov8\data.yaml"
         print(f"\n📂 Data configuration file path:")
         print(f"   Default: {default_path}")
         
@@ -137,7 +137,7 @@ class YOLOPipeline:
                 if use_suggested == 'y':
                     return str(suggested_model)
         
-        default_model = r"C:\Users\gbhan\Desktop\YOLO DETCTION\cone_runs\cone_detector\weights\best.pt"
+        default_model = r"..\..\cone_runs\cone_detector\weights\best.pt"
         print(f"Default: {default_model}")
         
         use_default = input("Use default model? (y/n): ").strip().lower()

@@ -9,7 +9,7 @@ from ultralytics import YOLO
 import cv2
 
 # ---------- CONFIG ----------
-PROJECT_ROOT = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8")
+PROJECT_ROOT = Path(r"..\..\My First Project.yolov8")
 DATA_YAML = PROJECT_ROOT / "data.yaml"
 OUTPUT_BASE = PROJECT_ROOT / "deepseek_final_optimization"
 

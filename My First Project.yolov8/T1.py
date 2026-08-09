@@ -8,8 +8,8 @@ import os
 # ======================================================
 # CONFIG – EDIT THESE 3 PATHS ONLY
 # ======================================================
-ROOT = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8"
-PROJECT_DIR = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\perplexity outputs")
+ROOT = r"..\..\My First Project.yolov8"
+PROJECT_DIR = Path(r"..\..\My First Project.yolov8\perplexity outputs")
 MODEL_NAME = "yolov8n.pt"  # or "yolov8s.pt" if GPU has VRAM
 
 DATA_YAML = os.path.join(ROOT, "data.yaml")

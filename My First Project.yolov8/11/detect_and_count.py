@@ -8,7 +8,7 @@ from collections import defaultdict
 MODEL_PATH = r"runs/detect/train/weights/best.pt"   # update if different
 IMAGE_PATH = r"path/to/your/mix_image.jpg"          # single image
 # Or process all images in a folder:
-FOLDER_PATH = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\mix_images"  # create this folder and put mix images there
+FOLDER_PATH = r"..\..\My First Project.yolov8\mix_images"  # create this folder and put mix images there
 CONF_THRESHOLD = 0.25                               # minimum confidence to keep a detection
 # =======================================================
 

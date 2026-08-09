@@ -68,7 +68,7 @@ class YOLOPipeline:
     
     def get_data_config(self):
         """Get data.yaml path from user."""
-        default_path = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\data.yaml"
+        default_path = r"..\..\My First Project.yolov8\data.yaml"
         print(f"\n📂 Data configuration file path:")
         print(f"   Default: {default_path}")
         
@@ -100,7 +100,7 @@ class YOLOPipeline:
         print("="*60)
         
         # Look for existing model
-        default_model = r"C:\Users\gbhan\Desktop\YOLO DETCTION\cone_runs\cone_detector\weights\best.pt"
+        default_model = r"..\..\cone_runs\cone_detector\weights\best.pt"
         
         # Also check recent runs
         recent_runs = list(Path(".").glob("yolo_output_*"))
@@ -162,7 +162,7 @@ class YOLOPipeline:
         print(f"   F1 Score:  {metrics['f1']:.4f}")
         
         # Copy all plots from the most recent runs folder
-        runs_dir = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\runs\detect")
+        runs_dir = Path(r"..\..\My First Project.yolov8\runs\detect")
         if runs_dir.exists():
             # Get the most recent folder for this split
             split_folders = [f for f in runs_dir.iterdir() if f.is_dir() and split_name in f.name.lower()]

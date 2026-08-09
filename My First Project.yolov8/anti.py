@@ -36,8 +36,8 @@ from ultralytics import YOLO
 # ══════════════════════════════════════════════════════════════════════
 #  ❶  CONFIGURATION  —  edit these two paths if your layout changes
 # ══════════════════════════════════════════════════════════════════════
-DATA_YAML   = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\data.yaml")
-OUTPUT_BASE = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\Presentation_Results")
+DATA_YAML   = Path(r"..\..\My First Project.yolov8\data.yaml")
+OUTPUT_BASE = Path(r"..\..\Presentation_Results")
 CONF_THRESH = 0.25   # detection confidence for inference
 IOU_THRESH  = 0.50   # IoU threshold (NMS + evaluation)
 # ── small-dataset training recipe ────────────────────────────────────

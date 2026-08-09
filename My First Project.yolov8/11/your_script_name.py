@@ -31,14 +31,14 @@ def calculate_f1(precision, recall):
 def main():
     parser = argparse.ArgumentParser(description='Train YOLOv8 on custom dataset')
     parser.add_argument('--data', type=str,
-                        default=r'C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\data.yaml',
+                        default=r'..\..\My First Project.yolov8\data.yaml',
                         help='path to data.yaml')
     parser.add_argument('--epochs', type=int, default=50, help='training epochs')
     parser.add_argument('--imgsz', type=int, default=640, help='image size')
     parser.add_argument('--batch', type=int, default=16, help='batch size')
     parser.add_argument('--conf', type=float, default=0.5, help='confidence threshold for inference')
     parser.add_argument('--project', type=str,
-                        default=r'C:\Users\gbhan\Desktop\YOLO DETCTION\cone_runs',
+                        default=r'..\..\cone_runs',
                         help='project output directory')
     parser.add_argument('--name', type=str, default='cone_detector', help='experiment name')
     parser.add_argument('--pretrained', type=str, default='yolov8n.pt',

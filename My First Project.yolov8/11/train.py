@@ -10,15 +10,15 @@ def main():
     # =========================
     # CONFIG
     # =========================
-    DATA_YAML = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\data.yaml"
-    PROJECT_DIR = Path(r"C:\Users\gbhan\Desktop\YOLO DETCTION\cone_runs")
+    DATA_YAML = r"..\..\My First Project.yolov8\data.yaml"
+    PROJECT_DIR = Path(r"..\..\cone_runs")
     MODEL_NAME = "yolov8n.pt"
 
     EPOCHS = 50
     IMG_SIZE = 640
     CONF_THRESHOLD = 0.7
 
-    TEST_SOURCE = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\valid\images"
+    TEST_SOURCE = r"..\..\My First Project.yolov8\valid\images"
 
     # =========================
     # DEVICE CHECK

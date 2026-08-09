@@ -4,9 +4,9 @@ import cv2
 import csv
 
 # Paths
-TEST_IMAGES = r"C:\Users\gbhan\Desktop\YOLO DETCTION\My First Project.yolov8\test\images"
-MODEL_PATH = r"C:\Users\gbhan\Desktop\YOLO DETCTION\cone_runs\cone_detector\weights\best.pt"
-OUTPUT_DIR = r"C:\Users\gbhan\Desktop\YOLO DETCTION\test_predictions_no_labels"
+TEST_IMAGES = r"..\..\My First Project.yolov8\test\images"
+MODEL_PATH = r"..\..\cone_runs\cone_detector\weights\best.pt"
+OUTPUT_DIR = r"..\..\test_predictions_no_labels"
 
 # Load model
 model = YOLO(MODEL_PATH)
