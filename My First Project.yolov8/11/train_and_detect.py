@@ -6,6 +6,8 @@ import cv2
 import os
 
 def main():
+    import shutil
+    from datetime import datetime
 
     # =========================
     # CONFIG
@@ -27,6 +29,10 @@ def main():
     device = 0 if torch.cuda.is_available() else "cpu"
     print(f"\nUsing device: {'GPU' if device == 0 else 'CPU'}")
 
+    # Generate timestamped run folder to separate different training sessions
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    run_name = f"cone_detector_{timestamp}"
+
     # =========================
     # 1. TRAIN
     # =========================
@@ -37,7 +43,7 @@ def main():
         epochs=EPOCHS,
         imgsz=IMG_SIZE,
         project=str(PROJECT_DIR),
-        name="cone_detector",
+        name=run_name,
         exist_ok=True,
         patience=20,
         device=device,
@@ -55,10 +61,10 @@ def main():
     # =========================
     # 2. VALIDATE (on validation set)
     # =========================
-    best_model_path = PROJECT_DIR / "cone_detector" / "weights" / "best.pt"
+    best_model_path = PROJECT_DIR / run_name / "weights" / "best.pt"
 
     if not best_model_path.exists():
-        raise FileNotFoundError("best.pt not found — training may have failed.")
+        raise FileNotFoundError(f"best.pt not found at {best_model_path} — training may have failed.")
 
     best_model = YOLO(str(best_model_path))
 
@@ -137,8 +143,14 @@ def main():
         save_path = output_dir / image_name
         cv2.imwrite(str(save_path), img)
 
+    # Copy best weights to the static directory so other scripts can load the latest run by default
+    static_weights_dir = PROJECT_DIR / "cone_detector" / "weights"
+    static_weights_dir.mkdir(parents=True, exist_ok=True)
+    shutil.copy2(best_model_path, static_weights_dir / "best.pt")
+
     print(f"\nTest predictions saved in: {output_dir}")
     print(f"Best trained model saved in: {best_model_path}")
+    print(f"Latest weights copied to default static folder: {static_weights_dir / 'best.pt'}")
 
 
 if __name__ == "__main__":
