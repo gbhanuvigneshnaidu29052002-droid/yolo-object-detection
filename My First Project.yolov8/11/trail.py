@@ -2,6 +2,7 @@ from ultralytics import YOLO
 from pathlib import Path
 import cv2
 import csv
+import torch
 
 # Paths
 TEST_IMAGES = r"..\..\My First Project.yolov8\test\images"
@@ -24,7 +25,7 @@ results = model.predict(
     iou=0.45,
     save=False,
     stream=True,
-    device=0           # Use GPU if available
+    device=0 if torch.cuda.is_available() else 'cpu'           # Use GPU if available, else CPU
 )
 
 for result in results:
