@@ -1,0 +1,40 @@
+# Virtual environments in subfolders
+**/venv/
+**/.venv/
+
+# Editor settings
+**/.vscode/
+
+# Python caching
+**/__pycache__/
+**/*.pyc
+
+# Exclude massive ZIP files (exceed Git file limits)
+*.zip
+
+# Exclude runs and outputs (contain massive folders of images & labels)
+cone_runs/
+Presentation_Results/
+test_predictions_no_labels/
+FINAL_OUTPUT/
+
+# Exclude datasets (datasets are too large for Git)
+My First Project.coco/
+Task 2 dataset-*/
+
+# Exclude datasets and training runs inside My First Project.yolov8
+My First Project.yolov8/train/
+My First Project.yolov8/valid/
+My First Project.yolov8/test/
+My First Project.yolov8/runs/
+My First Project.yolov8/deep/
+My First Project.yolov8/deepseek_final_optimization/
+My First Project.yolov8/deepseek_robust/
+My First Project.yolov8/perplexity outputs/
+My First Project.yolov8/YOLO_Complete_Results_*/
+My First Project.yolov8/yolo_output_*/
+My First Project.yolov8/YOLO_Results_*/
+
+# OS metadata
+.DS_Store
+Thumbs.db
