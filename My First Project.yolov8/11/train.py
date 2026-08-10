@@ -12,15 +12,16 @@ def main():
     # =========================
     # CONFIG
     # =========================
-    DATA_YAML = r"..\..\My First Project.yolov8\data.yaml"
-    PROJECT_DIR = Path(r"..\..\cone_runs")
+    # Convert paths to absolute to prevent Ultralytics relative path bugs on Windows
+    DATA_YAML = str(Path(r"..\..\My First Project.yolov8\data.yaml").resolve())
+    PROJECT_DIR = Path(r"..\..\cone_runs").resolve()
     MODEL_NAME = "yolov8n.pt"
 
     EPOCHS = 50
     IMG_SIZE = 640
     CONF_THRESHOLD = 0.7
 
-    TEST_SOURCE = r"..\..\My First Project.yolov8\valid\images"
+    TEST_SOURCE = str(Path(r"..\..\My First Project.yolov8\valid\images").resolve())
 
     # =========================
     # DEVICE CHECK

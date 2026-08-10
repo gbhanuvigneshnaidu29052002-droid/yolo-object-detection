@@ -12,8 +12,9 @@ def main():
     # =========================
     # CONFIG
     # =========================
-    DATA_YAML = r"..\..\My First Project.yolov8\data.yaml"
-    PROJECT_DIR = Path(r"..\..\cone_runs")
+    # Convert paths to absolute to prevent Ultralytics relative path bugs on Windows
+    DATA_YAML = str(Path(r"..\..\My First Project.yolov8\data.yaml").resolve())
+    PROJECT_DIR = Path(r"..\..\cone_runs").resolve()
     MODEL_NAME = "yolov8n.pt"
 
     EPOCHS = 50
@@ -21,7 +22,7 @@ def main():
     CONF_THRESHOLD = 0.7   # << your chosen threshold
 
     # IMPORTANT: now using a TRUE TEST SET
-    TEST_SOURCE = r"..\..\My First Project.yolov8\test\images"
+    TEST_SOURCE = str(Path(r"..\..\My First Project.yolov8\test\images").resolve())
 
     # =========================
     # DEVICE CHECK
