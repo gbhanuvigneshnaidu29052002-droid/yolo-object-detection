@@ -4,6 +4,11 @@
 **/.vscode/
 **/__pycache__/
 **/*.pyc
+.pytest_cache/
+.coverage
+*.egg-info/
+build/
+dist/
 
 # Model weights & large archives
 *.pt
